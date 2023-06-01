@@ -1,0 +1,52 @@
+object PlanszowkiMF: TPlanszowkiMF
+  Left = 674
+  Height = 408
+  Top = 238
+  Width = 562
+  Caption = 'PlanszowkiMF'
+  ClientHeight = 408
+  ClientWidth = 562
+  DesignTimePPI = 144
+  LCLVersion = '2.2.6.0'
+  object BSesje: TButton
+    Left = 112
+    Height = 40
+    Top = 224
+    Width = 120
+    Caption = 'Sesje'
+    OnClick = BSesjeClick
+    TabOrder = 0
+  end
+  object BZamknij: TButton
+    Left = 432
+    Height = 38
+    Top = 360
+    Width = 113
+    Caption = 'Zamknij'
+    OnClick = BZamknijClick
+    TabOrder = 1
+  end
+  object BGracze: TButton
+    Left = 335
+    Height = 41
+    Top = 224
+    Width = 112
+    Caption = 'Gracze'
+    OnClick = BGraczeClick
+    TabOrder = 2
+  end
+  object greeting: TLabel
+    Left = 112
+    Height = 22
+    Top = 88
+    Width = 382
+    Caption = 'Witaj w programie do notowania wynikow'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+end

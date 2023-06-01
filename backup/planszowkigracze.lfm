@@ -1,0 +1,111 @@
+object PlanszowkiGF: TPlanszowkiGF
+  Left = 528
+  Height = 519
+  Top = 242
+  Width = 920
+  Caption = 'PlanszowkiGF'
+  ClientHeight = 519
+  ClientWidth = 920
+  DesignTimePPI = 144
+  LCLVersion = '2.2.6.0'
+  object DBGracze: TDBGrid
+    Left = 160
+    Height = 296
+    Top = 120
+    Width = 624
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'id'
+        Width = 30
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'imie'
+        Width = 130
+        FieldName = 'imie'
+      end    
+      item
+        Title.Caption = 'stopien'
+        Width = 130
+        FieldName = 'stopien'
+      end    
+      item
+        Title.Caption = 'aktywny'
+        Width = 130
+        FieldName = 'aktywny'
+      end    
+      item
+        Title.Caption = 'liczba_wygranych'
+        Width = 150
+        FieldName = 'liczba_wygranych'
+      end>
+    DataSource = DSGraczePrzeglad
+    ReadOnly = True
+    Scrollbars = ssVertical
+    TabOrder = 0
+  end
+  object CBAktywni: TCheckBox
+    Left = 24
+    Height = 29
+    Top = 168
+    Width = 93
+    Caption = 'Aktywni'
+    OnChange = CBAktywniChange
+    TabOrder = 1
+  end
+  object LSortuj: TLabel
+    Left = 24
+    Height = 25
+    Top = 120
+    Width = 47
+    Caption = 'Sortuj'
+    ParentColor = False
+  end
+  object CBNowicjusz: TCheckBox
+    Left = 24
+    Height = 29
+    Top = 208
+    Width = 109
+    Caption = 'Nowicjusz'
+    OnChange = CBNowicjuszChange
+    TabOrder = 2
+  end
+  object LGracze: TLabel
+    Left = 368
+    Height = 52
+    Top = 33
+    Width = 102
+    Caption = 'Gracze'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -30
+    Font.Name = 'Segoe Print'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object BDodajGracza: TButton
+    Left = 160
+    Height = 43
+    Top = 432
+    Width = 144
+    Caption = 'Dodaj gracza'
+    OnClick = BDodajGraczaClick
+    TabOrder = 3
+  end
+  object BCofnij: TButton
+    Left = 792
+    Height = 38
+    Top = 464
+    Width = 113
+    Caption = 'Cofnij'
+    OnClick = BCofnijClick
+    TabOrder = 4
+  end
+  object DSGraczePrzeglad: TDataSource
+    DataSet = PlanszowkiSQLF.ZQGracze
+    Left = 744
+    Top = 16
+  end
+end

@@ -1,0 +1,213 @@
+object PlanszowkiESF: TPlanszowkiESF
+  Left = 498
+  Height = 617
+  Top = 50
+  Width = 901
+  Caption = 'PlanszowkiESF'
+  ClientHeight = 617
+  ClientWidth = 901
+  DesignTimePPI = 144
+  OnShow = FormShow
+  LCLVersion = '2.2.6.0'
+  object DBGrid1: TDBGrid
+    Left = 40
+    Height = 64
+    Top = 72
+    Width = 832
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'id'
+        Width = 30
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'tytul_gry'
+        Width = 130
+        FieldName = 'tytul_gry'
+      end    
+      item
+        Title.Caption = 'liczba_osob'
+        Width = 130
+        FieldName = 'liczba_osob'
+      end    
+      item
+        Title.Caption = 'czas_gry'
+        Width = 130
+        FieldName = 'czas_gry'
+      end    
+      item
+        Title.Caption = 'ocena_partii'
+        Width = 130
+        FieldName = 'ocena_partii'
+      end    
+      item
+        Title.Caption = 'dodatkowy_opis'
+        Width = 130
+        FieldName = 'dodatkowy_opis'
+      end    
+      item
+        Title.Caption = 'data'
+        Width = 130
+        FieldName = 'data'
+      end>
+    DataSource = DSEdytujSesje
+    Scrollbars = ssNone
+    TabOrder = 0
+  end
+  object DBCBCzasGry: TDBComboBox
+    Left = 64
+    Height = 33
+    Top = 288
+    Width = 150
+    DataField = 'czas_gry'
+    DataSource = DSEdytujSesje
+    ItemHeight = 25
+    Items.Strings = (
+      '0 - 0,5h'
+      '0,5 - 1h'
+      '1 - 1,5h'
+      '1,5 - 2h'
+      '2 - 2,5h'
+      '2,5 - 3h'
+      '3h +'
+    )
+    MaxLength = 0
+    Style = csDropDownList
+    TabOrder = 1
+  end
+  object DBCOcena: TDBComboBox
+    Left = 271
+    Height = 33
+    Top = 200
+    Width = 150
+    DataField = 'ocena_partii'
+    DataSource = DSEdytujSesje
+    ItemHeight = 25
+    Items.Strings = (
+      '1'
+      '2'
+      '3'
+      '4'
+      '5'
+      '6'
+      '7'
+      '8'
+      '9'
+      '10'
+    )
+    MaxLength = 0
+    Style = csDropDownList
+    TabOrder = 2
+  end
+  object DBEOpis: TDBEdit
+    Left = 272
+    Height = 33
+    Top = 288
+    Width = 149
+    DataField = 'dodatkowy_opis'
+    DataSource = DSEdytujSesje
+    MaxLength = 255
+    TabOrder = 3
+  end
+  object LOpis: TLabel
+    Left = 271
+    Height = 25
+    Top = 248
+    Width = 131
+    Caption = 'Dodatkowy opis'
+    ParentColor = False
+  end
+  object DBCalendar1: TDBCalendar
+    Left = 472
+    Height = 250
+    Top = 192
+    Width = 372
+    DateTime = 44726
+    TabOrder = 4
+    DataField = 'data'
+    DataSource = DSEdytujSesje
+  end
+  object LCzas: TLabel
+    Left = 64
+    Height = 25
+    Top = 248
+    Width = 67
+    Caption = 'Czas gry'
+    ParentColor = False
+  end
+  object LOcena: TLabel
+    Left = 272
+    Height = 25
+    Top = 160
+    Width = 95
+    Caption = 'Ocena partii'
+    ParentColor = False
+  end
+  object LData: TLabel
+    Left = 472
+    Height = 25
+    Top = 160
+    Width = 37
+    Caption = 'Data'
+    ParentColor = False
+  end
+  object LEdycja: TLabel
+    Left = 344
+    Height = 41
+    Top = 16
+    Width = 159
+    Caption = 'Edycja partii'
+    Font.Height = -30
+    ParentColor = False
+    ParentFont = False
+  end
+  object BZapisz: TButton
+    Left = 760
+    Height = 54
+    Top = 536
+    Width = 120
+    Caption = 'Zapisz'
+    OnClick = BZapiszClick
+    TabOrder = 5
+  end
+  object BAnuluj: TButton
+    Left = 608
+    Height = 54
+    Top = 536
+    Width = 128
+    Caption = 'Anuluj'
+    OnClick = BAnulujClick
+    TabOrder = 6
+  end
+  object LTytul: TLabel
+    Left = 64
+    Height = 25
+    Top = 160
+    Width = 68
+    Caption = 'Tytul gry'
+    ParentColor = False
+  end
+  object BWyniki: TButton
+    Left = 272
+    Height = 46
+    Top = 376
+    Width = 144
+    Caption = 'Wprowadz wyniki'
+    OnClick = BWynikiClick
+    TabOrder = 7
+  end
+  object LWyniki: TLabel
+    Left = 272
+    Height = 25
+    Top = 336
+    Width = 57
+    Caption = 'Wyniki:'
+    ParentColor = False
+  end
+  object DSEdytujSesje: TDataSource
+    DataSet = PlanszowkiSQLF.ZQSesja
+    Left = 488
+    Top = 544
+  end
+end

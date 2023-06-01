@@ -1,0 +1,261 @@
+object PlanszowkiWWF: TPlanszowkiWWF
+  Left = 574
+  Height = 539
+  Top = 50
+  Width = 749
+  Caption = 'PlanszowkiWWF'
+  ClientHeight = 539
+  ClientWidth = 749
+  DesignTimePPI = 144
+  OnClose = FormClose
+  LCLVersion = '2.2.6.0'
+  object DBCBLiczbaOsob: TDBComboBox
+    Left = 16
+    Height = 33
+    Top = 136
+    Width = 150
+    DataField = 'liczba_osob'
+    DataSource = DSSesja
+    ItemHeight = 25
+    Items.Strings = (
+      '1'
+      '2'
+      '3'
+      '4'
+      '5'
+      '6'
+    )
+    MaxLength = 0
+    OnChange = DBCBLiczbaOsobChange
+    Style = csDropDownList
+    TabOrder = 0
+  end
+  object LOsoby: TLabel
+    Left = 16
+    Height = 31
+    Top = 104
+    Width = 126
+    Caption = 'Liczba graczy:'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Name = 'Segoe Print'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object LGracz: TLabel
+    Left = 232
+    Height = 31
+    Top = 104
+    Width = 57
+    Caption = 'Gracz:'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Name = 'Segoe Print'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Gracz1: TDBLookupComboBox
+    Left = 232
+    Height = 33
+    Top = 136
+    Width = 150
+    KeyField = 'imie'
+    ListField = 'imie'
+    ListFieldIndex = 0
+    ListSource = DSGRacze
+    LookupCache = False
+    Style = csDropDownList
+    TabOrder = 1
+    Visible = False
+  end
+  object Gracz2: TDBLookupComboBox
+    Left = 232
+    Height = 33
+    Top = 184
+    Width = 150
+    DataField = 'imie_gracza'
+    KeyField = 'imie'
+    ListField = 'imie'
+    ListFieldIndex = 0
+    ListSource = DSGRacze
+    LookupCache = False
+    Style = csDropDownList
+    TabOrder = 2
+    Visible = False
+  end
+  object Gracz3: TDBLookupComboBox
+    Left = 232
+    Height = 33
+    Top = 232
+    Width = 150
+    KeyField = 'imie'
+    ListField = 'imie'
+    ListFieldIndex = 0
+    ListSource = DSGRacze
+    LookupCache = False
+    Style = csDropDownList
+    TabOrder = 3
+    Visible = False
+  end
+  object Gracz4: TDBLookupComboBox
+    Left = 232
+    Height = 33
+    Top = 280
+    Width = 150
+    DataField = 'imie_gracza'
+    KeyField = 'imie'
+    ListField = 'imie'
+    ListFieldIndex = 0
+    ListSource = DSGRacze
+    LookupCache = False
+    Style = csDropDownList
+    TabOrder = 4
+    Visible = False
+  end
+  object Gracz5: TDBLookupComboBox
+    Left = 232
+    Height = 33
+    Top = 328
+    Width = 150
+    KeyField = 'imie'
+    ListField = 'imie'
+    ListFieldIndex = 0
+    ListSource = DSGRacze
+    LookupCache = False
+    Style = csDropDownList
+    TabOrder = 5
+    Visible = False
+  end
+  object Gracz6: TDBLookupComboBox
+    Left = 232
+    Height = 33
+    Top = 376
+    Width = 150
+    DataField = 'imie_gracza'
+    KeyField = 'imie'
+    ListField = 'imie'
+    ListFieldIndex = 0
+    ListSource = DSGRacze
+    LookupCache = False
+    Style = csDropDownList
+    TabOrder = 6
+    Visible = False
+  end
+  object LPunkty: TLabel
+    Left = 416
+    Height = 31
+    Top = 104
+    Width = 147
+    Caption = 'Liczba punktów:'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Name = 'Segoe Print'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object BDodajWynik: TButton
+    Left = 616
+    Height = 33
+    Top = 496
+    Width = 120
+    Caption = 'Zapisz wyniki'
+    OnClick = BDodajWynikClick
+    TabOrder = 7
+  end
+  object LWyniki: TLabel
+    Left = 208
+    Height = 52
+    Top = 24
+    Width = 442
+    Caption = 'Wprowadz osiagniete wyniki:'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -30
+    Font.Name = 'Segoe Print'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object BDodajgracza: TButton
+    Left = 24
+    Height = 38
+    Top = 184
+    Width = 118
+    Caption = 'Dodaj gracza'
+    OnClick = BDodajgraczaClick
+    TabOrder = 8
+  end
+  object Punkty1: TEdit
+    Left = 416
+    Height = 33
+    Top = 136
+    Width = 149
+    Alignment = taRightJustify
+    NumbersOnly = True
+    TabOrder = 9
+    Visible = False
+  end
+  object Punkty2: TEdit
+    Left = 416
+    Height = 33
+    Top = 184
+    Width = 149
+    Alignment = taRightJustify
+    TabOrder = 10
+    Visible = False
+  end
+  object Punkty3: TEdit
+    Left = 416
+    Height = 33
+    Top = 232
+    Width = 149
+    Alignment = taRightJustify
+    TabOrder = 11
+    Visible = False
+  end
+  object Punkty4: TEdit
+    Left = 416
+    Height = 33
+    Top = 280
+    Width = 149
+    Alignment = taRightJustify
+    TabOrder = 12
+    Visible = False
+  end
+  object Punkty5: TEdit
+    Left = 416
+    Height = 33
+    Top = 328
+    Width = 149
+    Alignment = taRightJustify
+    TabOrder = 13
+    Visible = False
+  end
+  object Punkty6: TEdit
+    Left = 416
+    Height = 33
+    Top = 376
+    Width = 149
+    Alignment = taRightJustify
+    TabOrder = 14
+    Visible = False
+  end
+  object DSWyniki: TDataSource
+    DataSet = PlanszowkiSQLF.ZQWyniki
+    Left = 672
+    Top = 184
+  end
+  object DSGRacze: TDataSource
+    DataSet = PlanszowkiSQLF.ZQGracze
+    Left = 672
+    Top = 112
+  end
+  object DSSesja: TDataSource
+    DataSet = PlanszowkiSQLF.ZQSesja
+    Left = 672
+    Top = 32
+  end
+end

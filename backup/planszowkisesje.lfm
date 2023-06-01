@@ -1,0 +1,113 @@
+object PlanszowkiSF: TPlanszowkiSF
+  Left = 420
+  Height = 618
+  Top = 262
+  Width = 1177
+  Caption = 'PlanszowkiSF'
+  ClientHeight = 618
+  ClientWidth = 1177
+  DesignTimePPI = 144
+  LCLVersion = '2.2.6.0'
+  object BDodaj: TButton
+    Left = 48
+    Height = 54
+    Top = 336
+    Width = 129
+    Caption = 'Dodaj'
+    OnClick = BDodajClick
+    TabOrder = 0
+  end
+  object BEdytuj: TButton
+    Left = 216
+    Height = 54
+    Top = 336
+    Width = 129
+    Caption = 'Edytuj'
+    OnClick = BEdytujClick
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 488
+    Height = 52
+    Top = 24
+    Width = 169
+    Caption = 'Twoje sesje'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -30
+    Font.Name = 'Segoe Print'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object BCofnij: TButton
+    Left = 1024
+    Height = 46
+    Top = 544
+    Width = 129
+    Caption = 'Cofnij'
+    OnClick = BCofnijClick
+    TabOrder = 2
+  end
+  object DBGrid1: TDBGrid
+    Left = 48
+    Height = 240
+    Top = 88
+    Width = 1088
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'id'
+        Width = 30
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'tytul_gry'
+        Width = 100
+        FieldName = 'tytul_gry'
+      end    
+      item
+        Title.Caption = 'liczba_osob'
+        Width = 130
+        FieldName = 'liczba_osob'
+      end    
+      item
+        Title.Caption = 'czas_gry'
+        Width = 130
+        FieldName = 'czas_gry'
+      end    
+      item
+        Title.Caption = 'ocena_partii'
+        Width = 130
+        FieldName = 'ocena_partii'
+      end    
+      item
+        Title.Caption = 'dodatkowy_opis'
+        Width = 160
+        FieldName = 'dodatkowy_opis'
+      end    
+      item
+        Title.Caption = 'data'
+        Width = 100
+        FieldName = 'data'
+      end    
+      item
+        Title.Caption = 'max_punktow'
+        Width = 130
+        FieldName = 'max_punktow'
+      end    
+      item
+        Title.Caption = 'zwyciezca'
+        Width = 130
+        FieldName = 'zwyciezca'
+      end>
+    DataSource = PlanszowkiDSF.DSSesja
+    Scrollbars = ssVertical
+    TabOrder = 3
+    OnTitleClick = DBGrid1TitleClick
+  end
+  object DSPrzegladSesji: TDataSource
+    Left = 48
+    Top = 16
+  end
+end

@@ -1,0 +1,306 @@
+object PlanszowkiSQLF: TPlanszowkiSQLF
+  OldCreateOrder = False
+  Height = 743
+  HorizontalOffset = 532
+  VerticalOffset = 171
+  Width = 864
+  PPI = 144
+  object ZConn: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = '192.168.188.11'
+    Port = 5005
+    Database = 'zuzia'
+    User = 'chbjciw'
+    Password = 'kuba!1971'
+    Protocol = 'postgresql'
+    Left = 64
+    Top = 53
+  end
+  object ZSPlanszowki: TZSequence
+    Connection = ZConn
+    SequenceName = 'public.planszowki_seq'
+    Left = 168
+    Top = 160
+  end
+  object ZQSesja: TZQuery
+    Connection = ZConn
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM sesja'
+    )
+    Params = <>
+    Sequence = ZSPlanszowki
+    SequenceField = 'id'
+    Left = 64
+    Top = 160
+    object ZQSesjaid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZQSesjatytul_gry: TStringField
+      FieldKind = fkData
+      FieldName = 'tytul_gry'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+    object ZQSesjaliczba_osob: TLargeintField
+      FieldKind = fkData
+      FieldName = 'liczba_osob'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQSesjaczas_gry: TStringField
+      FieldKind = fkData
+      FieldName = 'czas_gry'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+    object ZQSesjaocena_partii: TLargeintField
+      FieldKind = fkData
+      FieldName = 'ocena_partii'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQSesjadodatkowy_opis: TStringField
+      FieldKind = fkData
+      FieldName = 'dodatkowy_opis'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+    object ZQSesjadata: TDateField
+      FieldKind = fkData
+      FieldName = 'data'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQSesjamax_punktow: TLargeintField
+      FieldKind = fkData
+      FieldName = 'max_punktow'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQSesjazwyciezca: TStringField
+      FieldKind = fkData
+      FieldName = 'zwyciezca'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+  end
+  object ZQGracze: TZQuery
+    Connection = ZConn
+    SQL.Strings = (
+      'SELECT * FROM planszowkigracze'
+    )
+    Params = <>
+    Sequence = ZSGracze
+    SequenceField = 'id'
+    Left = 64
+    Top = 264
+    object ZQGraczeid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZQGraczeimie: TStringField
+      FieldKind = fkData
+      FieldName = 'imie'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+    object ZQGraczestopien: TStringField
+      FieldKind = fkData
+      FieldName = 'stopien'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+    object ZQGraczeaktywny: TBooleanField
+      FieldKind = fkData
+      FieldName = 'aktywny'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+    object ZQGraczeliczba_wygranych: TLongintField
+      FieldKind = fkData
+      FieldName = 'liczba_wygranych'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZQWyniki: TZQuery
+    Connection = ZConn
+    SQL.Strings = (
+      'SELECT * FROM planszowkiwyniki'
+    )
+    Params = <>
+    Sequence = ZSWyniki
+    SequenceField = 'id'
+    Left = 64
+    Top = 376
+    object ZQWynikiid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQWynikiimie_gracza: TStringField
+      FieldKind = fkData
+      FieldName = 'imie_gracza'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+    object ZQWynikipunkty_gracza: TLongintField
+      FieldKind = fkData
+      FieldName = 'punkty_gracza'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQWynikipowiazane_id: TLongintField
+      FieldKind = fkData
+      FieldName = 'powiazane_id'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZSGracze: TZSequence
+    Connection = ZConn
+    SequenceName = 'public.gracze_seq'
+    Left = 172
+    Top = 264
+  end
+  object ZSWyniki: TZSequence
+    Connection = ZConn
+    SequenceName = 'public.wyniki_seq'
+    Left = 172
+    Top = 376
+  end
+  object ZQNajwyzszy: TZQuery
+    Connection = ZConn
+    SQL.Strings = (
+      'SELECT MAX(punkty_gracza) FROM planszowkiwyniki WHERE powiazane_id=( SELECT MAX(powiazane_id) FROM planszowkiwyniki)'
+    )
+    Params = <>
+    Left = 64
+    Top = 480
+    object ZQNajwyzszymax: TLongintField
+      FieldKind = fkData
+      FieldName = 'max'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+  end
+  object ZQZwyciezca: TZQuery
+    Connection = ZConn
+    SQL.Strings = (
+      'SELECT imie_gracza'
+      'FROM planszowkiwyniki'
+      'WHERE punkty_gracza = (SELECT max(punkty_gracza) FROM planszowkiwyniki '
+      'WHERE powiazane_id = (SELECT MAX(powiazane_id) FROM planszowkiwyniki)) '
+    )
+    Params = <>
+    Left = 64
+    Top = 568
+    object ZQZwyciezcaimie_gracza: TStringField
+      FieldKind = fkData
+      FieldName = 'imie_gracza'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+  end
+  object ZQAktualniGracze: TZQuery
+    Connection = ZConn
+    SQL.Strings = (
+      'SELECT imie_gracza FROM planszowkiwyniki WHERE powiazane_id =  (SELECT MAX(powiazane_id) FROM planszowkiwyniki)'
+    )
+    Params = <>
+    Left = 320
+    Top = 160
+    object ZQAktualniGraczeimie_gracza: TStringField
+      FieldKind = fkData
+      FieldName = 'imie_gracza'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
+    end
+  end
+end

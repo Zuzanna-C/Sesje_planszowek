@@ -1,0 +1,60 @@
+object PlanszowkiDGF: TPlanszowkiDGF
+  Left = 913
+  Height = 187
+  Top = 293
+  Width = 342
+  Caption = 'PlanszowkiDGF'
+  ClientHeight = 187
+  ClientWidth = 342
+  DesignTimePPI = 144
+  LCLVersion = '2.2.6.0'
+  object BDodaj: TButton
+    Left = 208
+    Height = 38
+    Top = 104
+    Width = 113
+    Caption = 'Dodaj'
+    OnClick = BDodajClick
+    TabOrder = 0
+  end
+  object LImie: TLabel
+    Left = 40
+    Height = 31
+    Top = 80
+    Width = 97
+    Caption = 'Podaj imie'
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Name = 'Segoe Print'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 80
+    Height = 52
+    Top = 8
+    Width = 208
+    Caption = 'Dodaj gracza:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -30
+    Font.Name = 'Segoe Print'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object EImie: TEdit
+    Left = 40
+    Height = 33
+    Top = 109
+    Width = 120
+    MaxLength = 255
+    TabOrder = 1
+  end
+  object DSGRacze: TDataSource
+    DataSet = PlanszowkiSQLF.ZQGracze
+    Left = 24
+    Top = 8
+  end
+end

@@ -1,0 +1,38 @@
+object PlanszowkiMF: TPlanszowkiMF
+  Left = 740
+  Height = 541
+  Top = 218
+  Width = 725
+  Caption = 'PlanszowkiMF'
+  ClientHeight = 541
+  ClientWidth = 725
+  DesignTimePPI = 144
+  LCLVersion = '2.2.6.0'
+  object BSesje: TButton
+    Left = 48
+    Height = 40
+    Top = 336
+    Width = 120
+    Caption = 'Sesje'
+    OnClick = BSesjeClick
+    TabOrder = 0
+  end
+  object BZamknij: TButton
+    Left = 600
+    Height = 38
+    Top = 496
+    Width = 113
+    Caption = 'Zamknij'
+    OnClick = BZamknijClick
+    TabOrder = 1
+  end
+  object BGracze: TButton
+    Left = 192
+    Height = 41
+    Top = 336
+    Width = 112
+    Caption = 'Gracze'
+    OnClick = BGraczeClick
+    TabOrder = 2
+  end
+end
